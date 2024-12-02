@@ -34,15 +34,28 @@ import ProfileMenu from "./components/ProfileMenu.vue";
   display: flex;
 
   .sidebar-pane {
-    position: fixed;
-    width: var(--sidebarWidth);
-    height: 100vh;
-    border-right: 0.0625rem solid hsl(var(--border));
+    width: 0;
+    border-right: none;
+    overflow: hidden;
   }
 
   .main-container {
-    width: calc(100% - var(--sidebarWidth));
-    margin-left: var(--sidebarWidth);
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .sidebar-pane {
+      position: fixed;
+      width: var(--sidebarWidth);
+      height: 100vh;
+      border-right: 0.0625rem solid hsl(var(--border));
+    }
+
+    .main-container {
+      width: calc(100% - var(--sidebarWidth));
+      margin-left: var(--sidebarWidth);
+    }
   }
 }
 </style>
