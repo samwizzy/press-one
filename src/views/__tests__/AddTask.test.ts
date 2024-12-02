@@ -2,15 +2,6 @@ import { render, screen } from "@testing-library/vue";
 import AddTaskView from "../AddTaskView.vue";
 import userEvent from "@testing-library/user-event";
 
-vi.mock("next/navigation", () => {
-  const replace = vi.fn();
-  return {
-    useSearchParams: () => new URLSearchParams(""),
-    usePathname: vi.fn().mockReturnValue("/products"),
-    useRouter: vi.fn().mockReturnValue({ replace }),
-  };
-});
-
 function createMockPointerEvent(type: string, props: PointerEventInit = {}): PointerEvent {
   const event = new Event(type, props) as PointerEvent;
   Object.assign(event, {
@@ -32,7 +23,7 @@ Object.assign(window.HTMLElement.prototype, {
 });
 
 describe("first", () => {
-  test("should have heading", async () => {
+  test("should have all components present", async () => {
     render(AddTaskView);
 
     expect(screen.getByText(/Add Task/)).toBeInTheDocument();
@@ -42,7 +33,7 @@ describe("first", () => {
     expect(screen.getByLabelText(/due Date/i)).toBeInTheDocument();
   });
 
-  test.skip("should submit the form", async () => {
+  test.skip("should have an enabled submit button in the form", async () => {
     render(AddTaskView);
 
     const title = screen.getByLabelText(/title/i);
