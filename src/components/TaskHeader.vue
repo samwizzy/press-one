@@ -4,11 +4,12 @@ import { useRouter } from "vue-router";
 import { debounce } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ArrowDownAZ, ArrowUpAZ, PlusIcon } from "lucide-vue-next";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const router = useRouter();
-const emit = defineEmits(["update-tasks", "update-sort"]);
+const emit = defineEmits(["update-tasks", "update-sort", "update-order"]);
 
 const inputValue = ref();
 
@@ -20,6 +21,10 @@ const handleTyping = (event: Event) => {
   const value = (event.target as HTMLInputElement).value;
 
   updateValue(value);
+};
+
+const handleOrderChange = (value: unknown) => {
+  emit("update-order", value);
 };
 
 const handleSortChange = (value: unknown) => {
@@ -34,7 +39,7 @@ const handleSortChange = (value: unknown) => {
     <div class="flex items-center gap-3">
       <Input v-model="inputValue" @input="handleTyping" class="lg:w-96 sm:w-auto" type="text" placeholder="Search" />
 
-      <ToggleGroup type="single" @update:model-value="handleSortChange">
+      <ToggleGroup type="single" @update:model-value="handleOrderChange">
         <ToggleGroupItem value="asc" aria-label="Toggle asc">
           <ArrowDownAZ class="h-4 w-4" />
         </ToggleGroupItem>
@@ -43,6 +48,23 @@ const handleSortChange = (value: unknown) => {
           <ArrowUpAZ class="h-4 w-4" />
         </ToggleGroupItem>
       </ToggleGroup>
+
+      <div class="flex items-center gap-2">
+        <p>Sort by:</p>
+
+        <Select @update:model-value="handleSortChange">
+          <SelectTrigger class="w-[180px]">
+            <SelectValue placeholder="Select an order" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem value="title">Title</SelectItem>
+              <SelectItem value="priority">Priority</SelectItem>
+              <SelectItem value="status">Status</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
 
       <Button @click="router.push('/tasks/add')"><PlusIcon /> New</Button>
     </div>

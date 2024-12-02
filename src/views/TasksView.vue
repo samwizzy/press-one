@@ -5,7 +5,6 @@ import { Task } from "@/lib/types/task.type";
 import { Button } from "@/components/ui/button";
 import TaskItem from "@/components/TaskItem.vue";
 import TaskHeader from "@/components/TaskHeader.vue";
-import { SortEnum } from "@/lib/enums/general.enum";
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import {
   Pagination,
@@ -25,10 +24,15 @@ const currentPage = ref(1);
 const itemsPerPage = ref(5);
 const totalItems = ref(0);
 
+const orderAs = ref("asc");
+const sortBy = ref("title");
+
 const fetchTasks = async () => {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_BASE_URL}/tasks?_page=${currentPage.value}&_limit=${itemsPerPage.value}`
+      `${import.meta.env.VITE_BASE_URL}/tasks?_page=${currentPage.value}&_limit=${itemsPerPage.value}&_sort=${
+        sortBy.value
+      }&_order=${orderAs.value}`
     );
     const data = await response.json();
     tasks.value = data;
@@ -36,7 +40,7 @@ const fetchTasks = async () => {
     const total = response.headers.get("X-Total-Count") ?? "0";
     totalItems.value = parseInt(total, 10);
   } catch (error) {
-    console.error("Fetching failed");
+    console.error(error);
   }
 };
 
@@ -57,12 +61,14 @@ const filterTasks = (value: string) => {
   });
 };
 
-const sortTasks = (value: unknown) => {
-  if (value === SortEnum.ASC) {
-    tasks.value = tasks.value.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (value === SortEnum.DESC) {
-    tasks.value = tasks.value.sort((a, b) => b.title.localeCompare(a.title));
-  }
+const updateSort = (value: string) => {
+  sortBy.value = value;
+  fetchTasks();
+};
+
+const updateOrder = (value: string) => {
+  orderAs.value = value;
+  fetchTasks();
 };
 
 const onPaginate = (page: number) => {
@@ -77,7 +83,7 @@ onMounted(fetchTasks);
 </script>
 
 <template>
-  <TaskHeader @update-tasks="filterTasks" @update-sort="sortTasks" />
+  <TaskHeader @update-tasks="filterTasks" @update-sort="updateSort" @update-order="updateOrder" />
 
   <div v-if="tasks?.length">
     <Table>
