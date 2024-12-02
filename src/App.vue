@@ -37,7 +37,7 @@ import ProfileMenu from "./components/ProfileMenu.vue";
     position: fixed;
     width: var(--sidebarWidth);
     height: 100vh;
-    border-right: 0.0625rem solid #ddd;
+    border-right: 0.0625rem solid hsl(var(--border));
   }
 
   .main-container {
