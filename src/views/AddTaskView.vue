@@ -51,6 +51,9 @@ const onSubmit = form.handleSubmit(async (values) => {
 
   const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks`, {
     method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
     body: JSON.stringify(payload),
   });
 

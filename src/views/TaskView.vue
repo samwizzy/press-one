@@ -14,7 +14,7 @@ const fetchTaskById = async (id: string) => {
     const data = await response.json();
     task.value = data;
   } catch (error) {
-    console.error("Fetching failed");
+    console.error(error);
   }
 };
 
