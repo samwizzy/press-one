@@ -60,14 +60,14 @@ This application allows users to view and manage tasks. It provide the capabilit
    │   ├── assets
    │   │   └── style.css # global style file
    │   ├── components 
-   │   ├── lib #  utils
-   │   ├── router # router
+   │   ├── lib # utils, types, enums
+   │   ├── router # router configuration
    │   ├── views # views
    │   ├── App.vue # layout
    │   ├── main.ts # entry file
    │   └── setupTest.ts # test setup
    ├── public
-   ├── .env # secret data
+   ├── .env # sensitive info
    ├── .gitignore # github ignore file
    ├── .db.json # json-server db 
    ├── .README.md  
