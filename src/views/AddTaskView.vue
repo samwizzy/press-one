@@ -160,7 +160,7 @@ const onSubmit = form.handleSubmit(async (values) => {
           </FormItem>
         </FormField>
 
-        <Button type="submit" class="mt-8">Submit</Button>
+        <Button data-testid="submit" type="submit" class="mt-8">Submit</Button>
       </form>
     </div>
 

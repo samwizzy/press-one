@@ -5,7 +5,7 @@ describe("DashboardView", () => {
   it("should have heading", async () => {
     render(DashboardView);
 
-    const heading = await screen.findByText(/dashboard/);
+    const heading = await screen.findByText(/dashboard/i);
 
     expect(heading).toBeInTheDocument();
   });

@@ -1,12 +1,5 @@
 <script lang="ts" setup>
-import { useRoute } from "vue-router";
 import { PentagonIcon, ListIcon, PlusIcon, SettingsIcon } from "lucide-vue-next";
-
-const isActiveLink = (routePath: string) => {
-  const route = useRoute();
-
-  return route.path === routePath;
-};
 </script>
 
 <template>
@@ -18,7 +11,7 @@ const isActiveLink = (routePath: string) => {
     <nav class="py-4">
       <ul class="menu-list">
         <li class="menu-item">
-          <RouterLink to="/" :class="[isActiveLink('/') ? 'active' : '', 'menu-item-link']">
+          <RouterLink to="/" class="menu-item-link">
             <PentagonIcon :size="20" />
 
             <p>Dashboard</p>
@@ -26,7 +19,7 @@ const isActiveLink = (routePath: string) => {
         </li>
 
         <li class="menu-item">
-          <RouterLink to="/tasks" :class="[isActiveLink('/tasks') ? 'active' : '', 'menu-item-link']">
+          <RouterLink to="/tasks" class="menu-item-link">
             <ListIcon :size="20" />
 
             <p>Tasks</p>
@@ -34,7 +27,7 @@ const isActiveLink = (routePath: string) => {
         </li>
 
         <li class="menu-item">
-          <RouterLink to="/tasks/add" :class="[isActiveLink('/tasks/add') ? 'active' : '', 'menu-item-link']">
+          <RouterLink to="/tasks/add" class="menu-item-link">
             <PlusIcon :size="20" />
 
             <p>Add Task</p>
@@ -42,13 +35,12 @@ const isActiveLink = (routePath: string) => {
         </li>
 
         <li class="menu-item">
-          <RouterLink to="/settings" :class="[isActiveLink('/settings') ? 'active' : '', 'menu-item-link']">
+          <RouterLink to="/settings" class="menu-item-link">
             <SettingsIcon :size="20" />
 
             <p>Settings</p>
           </RouterLink>
         </li>
-
       </ul>
     </nav>
 
@@ -93,7 +85,7 @@ const isActiveLink = (routePath: string) => {
       font-size: 0.875rem;
       padding: 0.75rem;
 
-      &.active {
+      &:is(.active, :hover) {
         background-color: hsl(var(--primary));
         color: hsl(var(--primary-foreground));
       }
