@@ -2,7 +2,7 @@
 
 <template>
   <div class="settings-container">
-    <h2 class="text-4xl font-bold">Settings</h2>
+    <h2 class="text-4xl font-medium">Settings</h2>
   </div>
 </template>
 

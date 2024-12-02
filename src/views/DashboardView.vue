@@ -2,7 +2,7 @@
 
 <template>
   <div class="dashboard-container">
-    <p class="text-4xl font-bold">Dashboard</p>
+    <p class="text-4xl font-medium">Dashboard</p>
   </div>
 </template>
 

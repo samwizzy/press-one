@@ -36,18 +36,20 @@ const handleSortChange = (value: unknown) => {
   <div class="table-options">
     <h2 data-testid="heading" class="text-2xl font-medium">Dashboard</h2>
 
-    <div class="flex items-center gap-3">
-      <Input v-model="inputValue" @input="handleTyping" class="lg:w-96 sm:w-auto" type="text" placeholder="Search" />
+    <div class="flex sm:flex-wrap lg:items-center gap-3">
+      <div class="flex items-center gap-2">
+        <Input v-model="inputValue" @input="handleTyping" class="lg:w-96 sm:w-auto" type="text" placeholder="Search" />
 
-      <ToggleGroup type="single" @update:model-value="handleOrderChange">
-        <ToggleGroupItem value="asc" aria-label="Toggle asc">
-          <ArrowDownAZ class="h-4 w-4" />
-        </ToggleGroupItem>
+        <ToggleGroup type="single" @update:model-value="handleOrderChange">
+          <ToggleGroupItem value="asc" aria-label="Toggle asc">
+            <ArrowDownAZ class="h-4 w-4" />
+          </ToggleGroupItem>
 
-        <ToggleGroupItem value="desc" aria-label="Toggle desc">
-          <ArrowUpAZ class="h-4 w-4" />
-        </ToggleGroupItem>
-      </ToggleGroup>
+          <ToggleGroupItem value="desc" aria-label="Toggle desc">
+            <ArrowUpAZ class="h-4 w-4" />
+          </ToggleGroupItem>
+        </ToggleGroup>
+      </div>
 
       <div class="flex items-center gap-2">
         <p>Sort by:</p>
@@ -74,9 +76,20 @@ const handleSortChange = (value: unknown) => {
 <style scoped>
 .table-options {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 0.25rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .table-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
 }
 </style>
