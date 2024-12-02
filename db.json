@@ -1,0 +1,76 @@
+{
+  "tasks": [
+    {
+      "title": "Design the home page ",
+      "description": "I have got nothing to say",
+      "priority": "Medium",
+      "dueDate": "2024-12-02",
+      "status": "Todo",
+      "id": "1"
+    },
+    {
+      "title": "Fix Navbar Bug3",
+      "description": "Resolve the issue with the navbar not collapsing on mobile devices.",
+      "priority": "Medium",
+      "dueDate": "2024-12-03",
+      "status": "To Do",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Implement API Integration",
+      "description": "Connect the app with the backend API for real-time data sync.",
+      "status": "In Progress",
+      "priority": "High",
+      "dueDate": "2024-12-05"
+    },
+    {
+      "id": "4",
+      "title": "Update User Documentation",
+      "description": "Revise and expand the user guide to include new features.",
+      "status": "To Do",
+      "priority": "Low",
+      "dueDate": "2024-12-07"
+    },
+    {
+      "id": "5",
+      "title": "Code Review",
+      "description": "Review pull requests and provide feedback to the team.",
+      "status": "Completed",
+      "priority": "Medium",
+      "dueDate": "2024-11-27"
+    },
+    {
+      "id": "6",
+      "title": "Optimize Page Load Speed",
+      "description": "Use Lighthouse to identify and fix performance issues.",
+      "status": "To Do",
+      "priority": "High",
+      "dueDate": "2024-12-10"
+    },
+    {
+      "id": "7",
+      "title": "Schedule Team Meeting",
+      "description": "Set up a meeting to discuss project updates and roadblocks.",
+      "status": "Completed",
+      "priority": "Low",
+      "dueDate": "2024-11-25"
+    },
+    {
+      "id": "8",
+      "title": "Write Unit Tests",
+      "description": "Write unit tests for the authentication module.",
+      "status": "In Progress",
+      "priority": "High",
+      "dueDate": "2024-12-02"
+    },
+    {
+      "id": "5248",
+      "title": "Nothing is set on stones",
+      "description": "We are about to launch the biggest ionic application the world has ever seen",
+      "priority": "Medium",
+      "dueDate": "2024-11-20",
+      "status": "To do"
+    }
+  ]
+}
