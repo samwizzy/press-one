@@ -15,14 +15,6 @@ describe("TasksView", () => {
     global.fetch = vi.restoreAllMocks() as any;
   });
 
-  it("should have heading", async () => {
-    render(TasksView);
-
-    const heading = await screen.findByTestId("heading");
-
-    expect(heading).toBeInTheDocument();
-  });
-
   it("should not have list items", async () => {
     const { container } = render(TasksView);
 

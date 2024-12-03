@@ -34,7 +34,7 @@ const handleSortChange = (value: unknown) => {
 
 <template>
   <div class="table-options">
-    <h2 data-testid="heading" class="text-2xl font-medium">Dashboard</h2>
+    <h2 class="text-2xl font-medium">Dashboard</h2>
 
     <div class="flex lg:flex-row flex-col flex-wrapx lg:items-center gap-3">
       <div class="flex items-center gap-2">
@@ -58,6 +58,7 @@ const handleSortChange = (value: unknown) => {
           <SelectTrigger class="w-[180px]">
             <SelectValue placeholder="Select an order" />
           </SelectTrigger>
+
           <SelectContent>
             <SelectGroup>
               <SelectItem value="title">Title</SelectItem>

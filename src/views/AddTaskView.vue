@@ -74,7 +74,7 @@ const onSubmit = form.handleSubmit(async (values) => {
             <FormLabel>Title</FormLabel>
 
             <FormControl>
-              <Input data-testid="title" type="text" placeholder="Complete my assessment" v-bind="componentField" />
+              <Input type="text" placeholder="Complete my assessment" v-bind="componentField" />
             </FormControl>
             <FormDescription></FormDescription>
             <FormMessage />
@@ -86,7 +86,7 @@ const onSubmit = form.handleSubmit(async (values) => {
             <FormLabel>Description</FormLabel>
 
             <FormControl>
-              <Textarea data-testid="description" placeholder="Type your message here." v-bind="componentField" />
+              <Textarea placeholder="Type your message here." v-bind="componentField" />
             </FormControl>
 
             <FormDescription></FormDescription>
@@ -98,7 +98,7 @@ const onSubmit = form.handleSubmit(async (values) => {
           <FormItem>
             <FormLabel>Priority</FormLabel>
 
-            <Select data-testid="priority" v-bind="componentField">
+            <Select v-bind="componentField">
               <FormControl>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a priority" />
@@ -126,7 +126,6 @@ const onSubmit = form.handleSubmit(async (values) => {
               <PopoverTrigger as-child>
                 <FormControl>
                   <Button
-                    data-testid="dueDate"
                     variant="outline"
                     :class="cn('w-[240px] ps-3 text-start font-normal', !value && 'text-muted-foreground')"
                   >
@@ -158,12 +157,12 @@ const onSubmit = form.handleSubmit(async (values) => {
               </PopoverContent>
             </Popover>
 
-            <FormDescription> Your date of birth is used to calculate your age. </FormDescription>
+            <FormDescription> Your due date is used to calculate escalation. </FormDescription>
             <FormMessage />
           </FormItem>
         </FormField>
 
-        <Button data-testid="submit" type="submit" class="mt-8">Submit</Button>
+        <Button type="submit" class="mt-8">Submit</Button>
       </form>
     </div>
 

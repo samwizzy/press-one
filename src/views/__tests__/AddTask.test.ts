@@ -37,9 +37,9 @@ describe("first", () => {
     render(AddTaskView);
 
     const title = screen.getByLabelText(/title/i);
-    const description = screen.getByTestId("description");
+    const description = screen.getByLabelText(/description/i);
     const priority = screen.getByRole("combobox");
-    const dueDate = screen.getByTestId("dueDate");
+    const dueDate = screen.getByLabelText(/due Date/i);
     const submitBtn = screen.getByRole("button", { name: /submit/i });
 
     const user = userEvent.setup();
@@ -47,7 +47,7 @@ describe("first", () => {
     expect(priority).toHaveTextContent(/select a priority/i);
 
     user.type(title, "Getting started");
-    user.type(description, "Why getting strated with the basic...");
+    user.type(description, "How to get started with the basic...");
     user.click(priority);
     user.click(dueDate);
 
