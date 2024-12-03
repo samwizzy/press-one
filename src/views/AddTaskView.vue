@@ -67,7 +67,7 @@ const onSubmit = form.handleSubmit(async (values) => {
   <h2 class="text-2xl font-medium mb-6">Add Task</h2>
 
   <section class="grid grid-cols-12 gap-6">
-    <div class="col-span-7 border-r pr-6">
+    <div class="lg:col-span-7 col-span-12 lg:border-r lg:pr-6">
       <form @submit="onSubmit">
         <FormField v-slot="{ componentField }" name="title">
           <FormItem>
@@ -167,7 +167,7 @@ const onSubmit = form.handleSubmit(async (values) => {
       </form>
     </div>
 
-    <div class="col-span-5"></div>
+    <div class="lg:col-span-5 col-span-12"></div>
   </section>
 </template>
 

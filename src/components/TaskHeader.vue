@@ -52,7 +52,7 @@ const handleSortChange = (value: unknown) => {
       </div>
 
       <div class="flex items-center gap-2">
-        <p>Sort by:</p>
+        <p class="text-nowrap">Sort by:</p>
 
         <Select @update:model-value="handleSortChange">
           <SelectTrigger class="w-[180px]">
