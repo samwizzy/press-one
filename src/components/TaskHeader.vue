@@ -36,9 +36,9 @@ const handleSortChange = (value: unknown) => {
   <div class="table-options">
     <h2 data-testid="heading" class="text-2xl font-medium">Dashboard</h2>
 
-    <div class="flex sm:flex-wrap lg:items-center gap-3">
+    <div class="flex lg:flex-row flex-col flex-wrapx lg:items-center gap-3">
       <div class="flex items-center gap-2">
-        <Input v-model="inputValue" @input="handleTyping" class="lg:w-96 sm:w-auto" type="text" placeholder="Search" />
+        <Input v-model="inputValue" @input="handleTyping" class="w-96 sm:w-full" type="text" placeholder="Search" />
 
         <ToggleGroup type="single" @update:model-value="handleOrderChange">
           <ToggleGroupItem value="asc" aria-label="Toggle asc">
@@ -79,6 +79,7 @@ const handleSortChange = (value: unknown) => {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 1200px) {
@@ -89,7 +90,6 @@ const handleSortChange = (value: unknown) => {
     justify-content: space-between;
     gap: 1rem;
     padding-block: 0.25rem;
-    margin-bottom: 1.5rem;
   }
 }
 </style>
