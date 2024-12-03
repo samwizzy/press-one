@@ -52,7 +52,7 @@ const handleSortChange = (value: unknown) => {
       </div>
 
       <div class="flex items-center gap-2">
-        <p class="text-nowrap">Sort by:</p>
+        <p class="text-sm text-nowrap">Sort by:</p>
 
         <Select @update:model-value="handleSortChange">
           <SelectTrigger class="w-[180px]">
@@ -69,7 +69,7 @@ const handleSortChange = (value: unknown) => {
         </Select>
       </div>
 
-      <Button @click="router.push('/tasks/add')"><PlusIcon /> New</Button>
+      <Button class="h-10" @click="router.push('/tasks/add')"><PlusIcon /> New</Button>
     </div>
   </div>
 </template>
