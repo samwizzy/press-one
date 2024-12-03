@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-import { useRoute } from "vue-router";
-
 defineProps<{ email?: string }>();
-
-const isActiveLink = (routePath: string) => {
-  const route = useRoute();
-
-  return route.path === routePath;
-};
 </script>
 
 <template>
@@ -19,13 +11,11 @@ const isActiveLink = (routePath: string) => {
     <nav class="navigation">
       <ul class="nav-list">
         <li class="nav-item">
-          <RouterLink :class="[isActiveLink('/') ? 'active' : '', 'nav-item-link']" to="/">Dashboard</RouterLink>
+          <RouterLink class="nav-item-link" to="/">Dashboard</RouterLink>
         </li>
 
         <li class="nav-item">
-          <RouterLink :class="[isActiveLink('/tasks') ? 'active' : '', 'nav-item-link']" to="/tasks">
-            Tasks
-          </RouterLink>
+          <RouterLink class="nav-item-link" to="/tasks"> Tasks </RouterLink>
         </li>
       </ul>
     </nav>

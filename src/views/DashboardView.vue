@@ -8,7 +8,7 @@
 
 <style scoped>
 .dashboard-container {
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 6.75rem);
   display: flex;
   align-items: center;
   justify-content: center;
