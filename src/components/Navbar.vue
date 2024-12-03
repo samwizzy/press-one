@@ -27,7 +27,7 @@ defineProps<{ email?: string }>();
   height: 3.75rem;
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-bottom: 0.0625rem solid hsl(var(--border));
   font-size: 0.875rem;
 }
@@ -63,6 +63,12 @@ defineProps<{ email?: string }>();
         color: hsl(var(--primary-foreground));
       }
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .site-header {
+    padding: 0.75rem 1.5rem;
   }
 }
 </style>

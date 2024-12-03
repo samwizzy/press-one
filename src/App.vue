@@ -20,7 +20,7 @@ import ProfileMenu from "./components/ProfileMenu.vue";
     <div class="main-container">
       <Navbar />
 
-      <main class="p-6">
+      <main class="lg:p-6 p-4">
         <RouterView />
       </main>
     </div>
