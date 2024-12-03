@@ -38,7 +38,7 @@ const handleSortChange = (value: unknown) => {
 
     <div class="flex lg:flex-row flex-col flex-wrapx lg:items-center gap-3">
       <div class="flex items-center gap-2">
-        <Input v-model="inputValue" @input="handleTyping" class="w-96 sm:w-full" type="text" placeholder="Search" />
+        <Input v-model="inputValue" @input="handleTyping" class="lg:w-96 w-full" type="text" placeholder="Search" />
 
         <ToggleGroup type="single" @update:model-value="handleOrderChange">
           <ToggleGroupItem value="asc" aria-label="Toggle asc">
